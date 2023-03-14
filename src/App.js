@@ -1,29 +1,41 @@
 import { useEffect, useState } from "react";
 
 function App() {
-  const [data, setData] = useState(null);
+  const [audio, setAudio] = useState(null);
 
   useEffect(() => {
     fetch("http://127.0.0.1:8000/")
       .then((res) => res.json())
-      .then((data) => setData(data));
+      .then((data) => setAudio(data));
   }, []);
 
   const handleSubmit = async (e) => {
-      const body = new FormData();
-      body.append("file", e.target.file);
-      const res = await fetch('http://127.0.0.1:8000/predict', { method: "POST", body });
-      return res.ok ? res : console.log('failed to upload: ');
+    e.preventDefault();
 
+    const body = new FormData();
+    body.append("file", audio);
+
+    const requestOptions = {
+      method: "POST",
+      body: body,
+    };
+
+    const res = await fetch("http://127.0.0.1:8000/test/", requestOptions);
+
+    return res.ok ? res : console.log("failed to upload");
+  };
+
+  const addFile = (e) => {
+    let file = e.target.files[0];
+    if (e.target.files[0]) {
+      setAudio(file);
+    }
   };
 
   return (
     <div>
       <div className="App">
-        {/* {data?.map((each_data, index) => (
-          <div key={index}>{each_data}</div>
-        ))} */} 
-      {data?.message}
+        {console.log("audio: " + audio)}
       </div>
 
       <form onSubmit={handleSubmit}>
@@ -32,7 +44,7 @@ function App() {
           // multiple
           name="file"
           className="myform"
-          // onChange={handleFileChange}
+          onChange={(e) => addFile(e)}
           accept="audio/wav"
         />
         <input type="submit" value="Submit" />
