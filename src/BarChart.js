@@ -43,14 +43,20 @@ function BarChart({ data }) {
         options={{
           plugins: {
             title: {
-              display: true,
-              text: "Users Gained between 2016-2020",
+              display: true, 
+              text: "Sound Events Detection",
             },
             legend: {
               display: false,
             },
             responsive: false,
           },
+          scales: {
+            y: {
+                suggestedMin: 0,
+                suggestedMax: 1
+            }
+        }
         }}
       />
     </div>
