@@ -42,7 +42,7 @@ function App() {
       body: body,
     };
     try {
-      const res = await fetch("http://0.0.0.0:8000/predict", requestOptions);
+      const res = await fetch("https://mldocker7.herokuapp.com/predict", requestOptions);
       const json = await res.json();
       setResult(JSON.parse("[" + json + "]"));
       console.log("*******RESULT************: " + JSON.parse("[" + json + "]"));

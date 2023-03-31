@@ -42,7 +42,7 @@ function Provide({ setResult }) {
         body: JSON.stringify({ title: choice }),
       };
       const res = await fetch(
-        "http://0.0.0.0:8000/choose_predict",
+        "https://mldocker7.herokuapp.com/choose_predict",
         requestOptions
       );
       const json = await res.json();
