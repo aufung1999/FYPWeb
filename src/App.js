@@ -5,6 +5,9 @@ import { CategoryScale } from "chart.js";
 import Chart from "chart.js/auto";
 import Provide from "./Provide";
 
+import picture1 from "./Pictures/picture1.png";
+import picture2 from "./Pictures/picture2.png";
+
 // Chart.register(CategoryScale);
 
 function App() {
@@ -27,7 +30,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setResult(null)
+    setResult(null);
 
     console.log(audio);
 
@@ -42,7 +45,10 @@ function App() {
       body: body,
     };
     try {
-      const res = await fetch("https://mldocker7.herokuapp.com/predict", requestOptions);
+      const res = await fetch(
+        "https://mldocker7.herokuapp.com/predict",
+        requestOptions
+      );
       const json = await res.json();
       setResult(JSON.parse("[" + json + "]"));
       console.log("*******RESULT************: " + JSON.parse("[" + json + "]"));
@@ -61,7 +67,39 @@ function App() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col"></div>
+        <div className="col-2 border d-flex flex-column align-items-center justify-content-center">
+          {/* <img src={picture1} alt="Logo" className="" />
+          <img src={picture2} alt="Logo" className="" /> */}
+          <div className="border my-5">
+            <h3>What it does</h3>
+            <div className="m-2">
+              {/* <h3>Import from computer</h3> */}
+              <div>
+                The project is combined with Machine Learning and Web
+                development. It will predict the imported/select audio file to
+                predict what sound event it is.
+              </div>
+            </div>
+          </div>
+
+          <div className=" border">
+            <h3>Methods</h3>
+            <div className="m-3">
+              <h4>Import from computer</h4>
+              <div>1. Click the "Choose file" to import your 'wav' file</div>
+              <div>
+                2. Click the "Submit" button and then wait for the result
+              </div>
+            </div>
+            <div className="m-3">
+              <h4>Select from the list</h4>
+              <div>1. From the list in the Right</div>
+              <div>
+                2. Click the "select" button and then wait for the result
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div className="col-8 min-vh-100 border ">
           <div
@@ -99,10 +137,10 @@ function App() {
             ))}
           </div>
 
-          {result && <BarChart data={result}/>}
+          {result && <BarChart data={result} />}
         </div>
 
-        <Provide audio={audio} setAudio={setAudio} setResult={setResult}/>
+        <Provide audio={audio} setAudio={setAudio} setResult={setResult} />
       </div>
     </div>
   );

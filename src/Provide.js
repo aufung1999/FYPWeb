@@ -54,7 +54,7 @@ function Provide({ setResult }) {
   };
 
   return (
-    <div className="col" >
+    <div className="col-2" >
       {Data_list?.map((each, index) => (
         <div className=" mb-5" key={index}>
             <div className="text-center">{each.title}</div>
