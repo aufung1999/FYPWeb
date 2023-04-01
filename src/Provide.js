@@ -62,7 +62,7 @@ function Provide({ setResult }) {
               <button onClick={() => setPlaying(index)}>PLAY</button>
               <button onClick={() => setPlaying(null)}>PAUSE</button>
 
-              {playing == index && (
+              {playing === index && (
                 <Seekbar
                   value={appTime}
                   min="0"
