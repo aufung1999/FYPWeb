@@ -112,7 +112,7 @@ function App() {
             <div className="border my-2 shadow " id="use">
               <h3 className="m-2 d-inline-flex border-bottom border-5 ">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <i>What it does</i>
+                <i>Use</i>
               </h3>
               <div className="m-2">
                 {/* <h3>Import from computer</h3> */}
