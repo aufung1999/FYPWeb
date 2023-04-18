@@ -66,7 +66,7 @@ function Provide({ setResult, isWaiting }) {
     <div className="col-2">
       {Data_list?.map((each, index) => (
         <div className=" mb-3 border border-3" id="howto2" key={index}>
-          <div className="text-center mb-4">
+          <div className="text-center mb-2">
             <div id="howto2_match">{each.title}</div>
           </div>
           <div className="row d-flex">
@@ -78,7 +78,7 @@ function Provide({ setResult, isWaiting }) {
                 PLAY
               </button>
               <button
-                className=" stopBtn mx-2"
+                className="stopBtn mx-2"
                 onClick={() => setPlaying(null)}
               >
                 PAUSE
@@ -104,7 +104,7 @@ function Provide({ setResult, isWaiting }) {
               index={index}
             />
           </div>
-          <div className="btnPos border-1 my-2 p-1">
+          <div className="btnPos border-1 my-2 pb-1">
             <button
               className="button-33 buttonsize"
               onClick={(e) => requestChoice(e, each.filename)}

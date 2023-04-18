@@ -108,11 +108,8 @@ function App() {
               onExit={onExit}
             />
           </div>
-          <div className="col-2  d-flex flex-column align-items-center justify-content-center bg-primary-">
-            {/* <img src={picture1} alt="Logo" className="" />
-          <img src={picture2} alt="Logo" className="" /> */}
-
-            <div className="border my-4 shadow" id="use">
+          <div className="col-2 d-flex flex-column justify-content-center ">
+            <div className="border my-2 shadow " id="use">
               <h3 className="m-2 d-inline-flex border-bottom border-5 ">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <i>What it does</i>
