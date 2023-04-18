@@ -129,9 +129,9 @@ function App() {
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Methods</i>
               </h3>
 
-              <div className="m-3">
+              <div className="m-3 howto1">
                 <h4>Import from computer</h4>
-                <div className="d-flex">
+                <div className="d-flex ">
                   <div>1.&nbsp;&nbsp;</div>
                   <div>Click the "Choose file" to import your 'wav' file</div>
                 </div>
@@ -142,7 +142,7 @@ function App() {
                   </div>
                 </div>
               </div>
-              <div className="m-3 mt-4">
+              <div className="m-3 mt-4 howto2">
                 <h4>Select from the list</h4>
                 <div className="d-flex">
                   <div>1.&nbsp;&nbsp;</div>
@@ -170,7 +170,7 @@ function App() {
               }}
             >
               <form className="col  text-center" onSubmit={handleSubmit} >
-                <div className="d-inline-block border m-3 p-2" id="howto1">
+                <div className="d-inline-block border m-3 p-2 howto1" id="howto1">
                   <label className="custom-file-upload me-3">
                     <input
                       type="file"
