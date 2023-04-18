@@ -44,7 +44,7 @@ p span + span {
 }
 @media (min-width: 20em) {
   p {
-    font-size: 2em;
+    font-size: 1em;
   }
   p span::before,
   p span::after {
@@ -58,10 +58,10 @@ p span + span {
 }
 @media (min-width: 50em) {
   p {
-    font-size: 2em;
+    font-size: 3em;
   }
 }
-@media (min-width: 100em) {
+@media (min-width: 60em) {
   p {
     font-size: 6em;
   }
