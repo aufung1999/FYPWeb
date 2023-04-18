@@ -4,7 +4,7 @@ import BarChart from "./BarChart";
 import { Backdrop, CircularProgress, makeStyles } from "@mui/material";
 
 import { Steps, Hints } from "intro.js-react";
-import "intro.js/introjs.css";
+// import "intro.js/introjs.css";
 
 import Provide from "./Provide";
 import "./App.css";
@@ -166,7 +166,7 @@ function App() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                height: "10vh" /* Magic here */,
+                height: "5vh" /* Magic here */,
               }}
             >
               <form className="col  text-center" onSubmit={handleSubmit}>
@@ -188,12 +188,12 @@ function App() {
                 </div>
               </form>
             </div>
-            <div className="row row-cols-2 row-cols-lg-5 border mt-5">
+            <div className="row row-cols-2 row-cols-lg-5 mt-5">
               {result?.map((each, index) => (
-                <div className="border col-2">
-                  <div className="row border p-3 " key={index}>
+                <div className=" col-2 ">
+                  <div className="row p-2" key={index}>
                     <div
-                      className={`border rounded p-2 d-flex justify-content-center
+                      className={`border shadow-sm rounded p-2 d-flex justify-content-center
                        ${
                          each > 0.5
                            ? "predMostRes"
@@ -205,7 +205,7 @@ function App() {
                       <div className="col-auto text-end me-2">
                         {classes[index]}:
                       </div>
-                      <div className="col-4 border">{each.toFixed(2)}</div>
+                      <div className="col-4 ">{each.toFixed(2)}</div>
                     </div>
                   </div>
                 </div>

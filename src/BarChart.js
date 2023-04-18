@@ -15,7 +15,7 @@ function BarChart({ data }) {
     labels: Data.map((data) => data),
     datasets: [
       {
-        label: "Users Gained ",
+        label: "Accuracy",
         data: data.map((data) => data),
         backgroundColor: ["rgba(75,192,192,0.5)"], // no. of color = NUMBER of charts
         borderColor: "black",
@@ -47,16 +47,28 @@ function BarChart({ data }) {
               text: "Sound Events Detection",
             },
             legend: {
-              display: false,
+              labels: {
+                // This more specific font property overrides the global property
+                font: {
+                  size: 14,
+                },
+              },
             },
             responsive: false,
           },
           scales: {
             y: {
-                suggestedMin: 0,
-                suggestedMax: 1
+              suggestedMin: 0,
+              suggestedMax: 1,
+            },
+            x: {
+            ticks: {
+                font: {
+                    size: 17,
+                }
             }
         }
+          },
         }}
       />
     </div>
