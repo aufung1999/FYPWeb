@@ -63,7 +63,7 @@ p span + span {
 }
 @media (min-width: 60em) {
   p {
-    font-size: 6em;
+    font-size: 5em;
   }
 }
 .div {
