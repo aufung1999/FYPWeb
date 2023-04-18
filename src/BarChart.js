@@ -17,7 +17,7 @@ function BarChart({ data }) {
       {
         label: "Users Gained ",
         data: data.map((data) => data),
-        backgroundColor: ["rgba(75,192,192,1)"], // no. of color = NUMBER of charts
+        backgroundColor: ["rgba(75,192,192,0.5)"], // no. of color = NUMBER of charts
         borderColor: "black",
         borderWidth: 2,
       },
@@ -43,7 +43,7 @@ function BarChart({ data }) {
         options={{
           plugins: {
             title: {
-              display: true, 
+              display: true,
               text: "Sound Events Detection",
             },
             legend: {

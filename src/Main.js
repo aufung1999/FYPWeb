@@ -3,43 +3,13 @@ import BarChart from "./BarChart";
 
 import { Backdrop, CircularProgress, makeStyles } from "@mui/material";
 
-import { Steps, Hints } from "intro.js-react";
-import "intro.js/introjs.css";
-
 import Provide from "./Provide";
 import "./App.css";
 import Modal from "./Modal/Modal";
-import Animation from "./Animation";
 
 // Chart.register(CategoryScale);
 
-function App() {
-  // ======================================
-  const [enabled, setEnabled] = useState(true);
-  const [initialStep, setInitialStep] = useState(0);
-
-  const onExit = () => {
-    setEnabled(false);
-  };
-  const steps = [
-    {
-      element: "#use",
-      // intro: "You can use this button for help",
-      position: "right",
-    },
-    {
-      element: "#howto1",
-      // intro: "You can use this button to get more information",
-      position: "right",
-    },
-    {
-      element: "#howto2",
-      // intro: "You can use this button to get more information",
-      position: "right",
-    },
-  ];
-  // ======================================
-
+function Main() {
   const [audio, setAudio] = useState(null);
   const [result, setResult] = useState(null);
 
@@ -99,27 +69,15 @@ function App() {
     <div className="center">
       <div className="container-fluid ">
         <div className="row ">
-          {(result === null || result === false) && <Animation />}
-          <div className="d-flex justify-content-center">
-            <Steps
-              enabled={enabled}
-              steps={steps}
-              initialStep={initialStep}
-              onExit={onExit}
-            />
-          </div>
-          <div className="col-2  d-flex flex-column align-items-center justify-content-center bg-primary-">
+          <div className="col-2 border d-flex flex-column align-items-center justify-content-center bg-primary-">
             {/* <img src={picture1} alt="Logo" className="" />
           <img src={picture2} alt="Logo" className="" /> */}
 
-            <div className="border my-4 shadow" id="use">
-              <h3 className="m-2 d-inline-flex border-bottom border-5 ">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <i>What it does</i>
-              </h3>
+            <div className="border my-5">
+              <h3>What it does</h3>
               <div className="m-2">
                 {/* <h3>Import from computer</h3> */}
-                <div className="shadow-sm p-2 ">
+                <div>
                   The project is combined with Machine Learning and Web
                   development. It will predict the imported/select audio file to
                   predict what sound event it is.
@@ -127,41 +85,26 @@ function App() {
               </div>
             </div>
 
-            <div className=" border my-2 p-1 shadow " id="howto">
-              <h3 className="m-2 d-inline-flex border-bottom border-5 ">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Methods</i>
-              </h3>
-
-              <div className="m-3" id="howto1">
+            <div className=" border">
+              <h3>Methods</h3>
+              <div className="m-3">
                 <h4>Import from computer</h4>
-                <div className="d-flex">
-                  <div>1.&nbsp;&nbsp;</div>
-                  <div>Click the "Choose file" to import your 'wav' file</div>
-                </div>
-                <div className="d-flex">
-                  <div>2.&nbsp;&nbsp;</div>
-                  <div>
-                    Click the "Submit" button and then wait for the result
-                  </div>
+                <div>1. Click the "Choose file" to import your 'wav' file</div>
+                <div>
+                  2. Click the "Submit" button and then wait for the result
                 </div>
               </div>
-              <div className="m-3 mt-4" id="howto2">
+              <div className="m-3">
                 <h4>Select from the list</h4>
-                <div className="d-flex">
-                  <div>1.&nbsp;&nbsp;</div>
-                  <div>From the list in the Right</div>
-                </div>
-                <div className="d-flex">
-                  <div>2.&nbsp;&nbsp;</div>
-                  <div>
-                    Click the "select" button and then wait for the result
-                  </div>
+                <div>1. From the list in the Right</div>
+                <div>
+                  2. Click the "select" button and then wait for the result
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="col-8 min-vh-100 border bg-info-" id="use">
+          <div className="col-8 min-vh-100 border bg-info-">
             <div
               className="row "
               style={{
@@ -172,19 +115,16 @@ function App() {
                 height: "10vh" /* Magic here */,
               }}
             >
-              <form className="col  text-center" onSubmit={handleSubmit}>
-                <div className="d-inline-block border m-3 p-2" id="howto1">
-                  <label className="custom-file-upload">
-                    <input
-                      type="file"
-                      name="file"
-                      onChange={(e) => addFile(e)}
-                      accept="audio/wav"
-                    />
-                    <i class="fa fa-cloud-upload"></i> Upload File
-                  </label>
-                  <input type="submit" className="btn border" value="Submit" />
-                </div>
+              <form className="col border text-center" onSubmit={handleSubmit}>
+                <input
+                  type="file"
+                  // multiple
+                  name="file"
+                  className=""
+                  onChange={(e) => addFile(e)}
+                  accept="audio/wav"
+                />
+                <input type="submit" value="Submit" />
               </form>
             </div>
             <div className="row d-flex flex-column align-items-center mt-5">
@@ -221,4 +161,4 @@ function App() {
   );
 }
 
-export default App;
+export default Main;
