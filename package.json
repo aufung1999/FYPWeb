@@ -13,6 +13,7 @@
     "bootstrap": "^5.2.3",
     "chart.js": "^4.2.1",
     "fetch-blob": "^3.2.0",
+    "intro.js-react": "^0.7.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-chartjs-2": "^5.2.0",
