@@ -171,37 +171,51 @@ function App() {
             >
               <form className="col  text-center" onSubmit={handleSubmit}>
                 <div className="d-inline-block border m-3 p-2" id="howto1">
-                  <label className="custom-file-upload">
+                  <label className="custom-file-upload me-3">
                     <input
                       type="file"
                       name="file"
                       onChange={(e) => addFile(e)}
                       accept="audio/wav"
                     />
-                    <i class="fa fa-cloud-upload"></i> Upload File
+                    {/* <span className="btn border shadow-sm" >Upload File</span> */}
                   </label>
-                  <input type="submit" className="btn border" value="Submit" />
+                  <input
+                    type="submit"
+                    className="btn border shadow-sm"
+                    value="Submit"
+                  />
                 </div>
               </form>
             </div>
-            <div className="row d-flex flex-column align-items-center mt-5">
+            <div className="row row-cols-2 row-cols-lg-5 border mt-5">
               {result?.map((each, index) => (
-                <div className="col border ">
-                  <div className="row " key={index}>
-                    <div className="d-flex ">
-                      <div className="col text-end me-2">{classes[index]}:</div>
-                      <div className="col ">{each}</div>
+                <div className="border col-2">
+                  <div className="row border p-3 " key={index}>
+                    <div
+                      className={`border rounded p-2 d-flex justify-content-center
+                       ${
+                         each > 0.5
+                           ? "predMostRes"
+                           : each > 0.01
+                           ? "predLessRes"
+                           : null
+                       }`}
+                    >
+                      <div className="col-auto text-end me-2">
+                        {classes[index]}:
+                      </div>
+                      <div className="col-4 border">{each.toFixed(2)}</div>
                     </div>
                   </div>
                 </div>
               ))}
-
-              {waiting === true && (
-                <Backdrop open>
-                  <CircularProgress color="inherit" />
-                </Backdrop>
-              )}
             </div>
+            {waiting === true && (
+              <Backdrop open>
+                <CircularProgress color="inherit" />
+              </Backdrop>
+            )}
 
             {result && <BarChart data={result} />}
           </div>

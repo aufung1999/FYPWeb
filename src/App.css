@@ -38,13 +38,27 @@
 
 /* ==================================================================================================== */
 input[type="file"] {
-  display: none;
+  display: block;
 }
 .custom-file-upload {
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   border-radius: 10px;
   display: inline-block;
   padding: 6px 12px;
   cursor: pointer;
 }
 /* ==================================================================================================== */
+
+.predLessRes {
+  background-color: rgba(238, 255, 0, 0.103);
+}
+
+.predMostRes {
+  background-color: rgba(238, 255, 0, 0.3);
+
+  box-shadow: rgba(226, 230, 34, 0.2) 0 -25px 18px -14px inset,
+    rgba(161, 187, 44, 0.15) 0 1px 2px, rgba(165, 187, 44, 0.15) 0 2px 4px,
+    rgba(177, 187, 44, 0.15) 0 4px 8px, rgba(165, 187, 44, 0.15) 0 8px 16px,
+    rgba(177, 187, 44, 0.15) 0 16px 32px;
+  /* color: rgb(126, 128, 0); */
+}
