@@ -24,18 +24,18 @@ function App() {
   const steps = [
     {
       element: "#use",
-      // intro: "You can use this button for help",
+      intro: "Explanation",
       position: "right",
     },
     {
       element: "#howto1",
-      // intro: "You can use this button to get more information",
+      intro: "Method 1",
       position: "right",
     },
     {
       element: "#howto2",
-      // intro: "You can use this button to get more information",
-      position: "right",
+      intro: "Method 2",
+      position: "center",
     },
   ];
   // ======================================
@@ -129,7 +129,7 @@ function App() {
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Methods</i>
               </h3>
 
-              <div className="m-3" id="howto1">
+              <div className="m-3">
                 <h4>Import from computer</h4>
                 <div className="d-flex">
                   <div>1.&nbsp;&nbsp;</div>
@@ -142,7 +142,7 @@ function App() {
                   </div>
                 </div>
               </div>
-              <div className="m-3 mt-4" id="howto2">
+              <div className="m-3 mt-4">
                 <h4>Select from the list</h4>
                 <div className="d-flex">
                   <div>1.&nbsp;&nbsp;</div>
@@ -158,7 +158,7 @@ function App() {
             </div>
           </div>
 
-          <div className="col-8 min-vh-100 border bg-info-" id="use">
+          <div className="col-8 min-vh-100 border bg-info-">
             <div
               className="row "
               style={{
@@ -169,7 +169,7 @@ function App() {
                 height: "5vh" /* Magic here */,
               }}
             >
-              <form className="col  text-center" onSubmit={handleSubmit}>
+              <form className="col  text-center" onSubmit={handleSubmit} >
                 <div className="d-inline-block border m-3 p-2" id="howto1">
                   <label className="custom-file-upload me-3">
                     <input

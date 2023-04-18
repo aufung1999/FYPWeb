@@ -63,7 +63,7 @@ function Provide({ setResult, isWaiting }) {
   };
 
   return (
-    <div className="col-2">
+    <div className="col-2"  id="howto2">
       {Data_list?.map((each, index) => (
         <div className=" mb-3 border border-3" id="howto2" key={index}>
           <div className="text-center mb-2">
